@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1D7733012013A564005377C5 /* libHTAESencrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7733002013A564005377C5 /* libHTAESencrypt.m */; };
 		1D7733022013A564005377C5 /* libHTAESencrypt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D7732FF2013A564005377C5 /* libHTAESencrypt.h */; };
+		1D7733142013B3EE005377C5 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7733092013B3EE005377C5 /* NSString+Base64.m */; };
+		1D7733152013B3EE005377C5 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77330B2013B3EE005377C5 /* AESCrypt.m */; };
+		1D7733162013B3EE005377C5 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7733122013B3EE005377C5 /* NSData+CommonCrypto.m */; };
+		1D7733172013B3EE005377C5 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7733132013B3EE005377C5 /* NSData+Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +32,17 @@
 		1D7732FC2013A564005377C5 /* liblibHTAESencrypt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibHTAESencrypt.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7732FF2013A564005377C5 /* libHTAESencrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libHTAESencrypt.h; sourceTree = "<group>"; };
 		1D7733002013A564005377C5 /* libHTAESencrypt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libHTAESencrypt.m; sourceTree = "<group>"; };
+		1D7733092013B3EE005377C5 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		1D77330A2013B3EE005377C5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1D77330B2013B3EE005377C5 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		1D77330C2013B3EE005377C5 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		1D77330D2013B3EE005377C5 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		1D77330E2013B3EE005377C5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1D77330F2013B3EE005377C5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1D7733102013B3EE005377C5 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
+		1D7733112013B3EE005377C5 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		1D7733122013B3EE005377C5 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		1D7733132013B3EE005377C5 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +75,29 @@
 		1D7732FE2013A564005377C5 /* libHTAESencrypt */ = {
 			isa = PBXGroup;
 			children = (
+				1D7733082013B3EE005377C5 /* AESCrypt */,
 				1D7732FF2013A564005377C5 /* libHTAESencrypt.h */,
 				1D7733002013A564005377C5 /* libHTAESencrypt.m */,
 			);
 			path = libHTAESencrypt;
+			sourceTree = "<group>";
+		};
+		1D7733082013B3EE005377C5 /* AESCrypt */ = {
+			isa = PBXGroup;
+			children = (
+				1D7733092013B3EE005377C5 /* NSString+Base64.m */,
+				1D77330A2013B3EE005377C5 /* LICENSE */,
+				1D77330B2013B3EE005377C5 /* AESCrypt.m */,
+				1D77330C2013B3EE005377C5 /* NSData+Base64.h */,
+				1D77330D2013B3EE005377C5 /* NSData+CommonCrypto.h */,
+				1D77330E2013B3EE005377C5 /* README.md */,
+				1D77330F2013B3EE005377C5 /* .gitignore */,
+				1D7733102013B3EE005377C5 /* AESCrypt.h */,
+				1D7733112013B3EE005377C5 /* NSString+Base64.h */,
+				1D7733122013B3EE005377C5 /* NSData+CommonCrypto.m */,
+				1D7733132013B3EE005377C5 /* NSData+Base64.m */,
+			);
+			path = AESCrypt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7733162013B3EE005377C5 /* NSData+CommonCrypto.m in Sources */,
+				1D7733142013B3EE005377C5 /* NSString+Base64.m in Sources */,
+				1D7733172013B3EE005377C5 /* NSData+Base64.m in Sources */,
+				1D7733152013B3EE005377C5 /* AESCrypt.m in Sources */,
 				1D7733012013A564005377C5 /* libHTAESencrypt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
