@@ -12,5 +12,4 @@
 @interface libHTAESencrypt : AESCrypt
 + (NSString *)encrypt:(NSString *)message;
 + (NSString *)decrypt:(NSString *)base64EncodedString;
-//-(void)libPrintfTest;
 @end

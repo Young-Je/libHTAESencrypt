@@ -9,9 +9,7 @@
 #import "libHTAESencrypt.h"
 
 @implementation libHTAESencrypt
--(void)libPrintfTest{
-    printf("xxx hellow lib");
-}
+
 + (NSString *)encrypt:(NSString *)message{
     return [self encrypt:message password:ASEENCRYPTIONKEY];
 }
