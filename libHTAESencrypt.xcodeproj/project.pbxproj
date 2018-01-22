@@ -22,10 +22,9 @@
 
 /* Begin PBXBuildFile section */
 		128548D220158C1000FD0CA4 /* HTCustomizedAESencrypt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D387A61201578A1005E747C /* HTCustomizedAESencrypt.h */; };
-		1285491F2015933200FD0CA4 /* libHTAESencrypt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D387A5E20157836005E747C /* libHTAESencrypt.h */; };
 		12854920201593F400FD0CA4 /* AESCrypt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D7733102013B3EE005377C5 /* AESCrypt.h */; };
 		1285492A2015996900FD0CA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128549292015996900FD0CA4 /* Foundation.framework */; };
-		1D387A5F20157836005E747C /* libHTAESencrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D387A5D20157836005E747C /* libHTAESencrypt.m */; };
+		1285492F2015BC2A00FD0CA4 /* libHTAESencrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1285492E2015BC2A00FD0CA4 /* libHTAESencrypt.m */; };
 		1D7733142013B3EE005377C5 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7733092013B3EE005377C5 /* NSString+Base64.m */; };
 		1D7733152013B3EE005377C5 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77330B2013B3EE005377C5 /* AESCrypt.m */; };
 		1D7733162013B3EE005377C5 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7733122013B3EE005377C5 /* NSData+CommonCrypto.m */; };
@@ -40,7 +39,6 @@
 			dstSubfolderSpec = 16;
 			files = (
 				12854920201593F400FD0CA4 /* AESCrypt.h in CopyFiles */,
-				1285491F2015933200FD0CA4 /* libHTAESencrypt.h in CopyFiles */,
 				128548D220158C1000FD0CA4 /* HTCustomizedAESencrypt.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,8 +47,8 @@
 
 /* Begin PBXFileReference section */
 		128549292015996900FD0CA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D387A5D20157836005E747C /* libHTAESencrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = libHTAESencrypt.m; sourceTree = "<group>"; };
-		1D387A5E20157836005E747C /* libHTAESencrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libHTAESencrypt.h; sourceTree = "<group>"; };
+		1285492D2015BC2900FD0CA4 /* libHTAESencrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libHTAESencrypt.h; sourceTree = "<group>"; };
+		1285492E2015BC2A00FD0CA4 /* libHTAESencrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = libHTAESencrypt.m; sourceTree = "<group>"; };
 		1D387A61201578A1005E747C /* HTCustomizedAESencrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTCustomizedAESencrypt.h; sourceTree = "<group>"; };
 		1D7732FC2013A564005377C5 /* liblibHTAESencrypt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibHTAESencrypt.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7733092013B3EE005377C5 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
@@ -86,15 +84,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1D387A5C20157836005E747C /* HTCustomized */ = {
-			isa = PBXGroup;
-			children = (
-				1D387A5D20157836005E747C /* libHTAESencrypt.m */,
-				1D387A5E20157836005E747C /* libHTAESencrypt.h */,
-			);
-			path = HTCustomized;
-			sourceTree = "<group>";
-		};
 		1D7732F32013A564005377C5 = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +104,6 @@
 		1D7732FE2013A564005377C5 /* libHTAESencrypt */ = {
 			isa = PBXGroup;
 			children = (
-				1D387A5C20157836005E747C /* HTCustomized */,
 				1D7733082013B3EE005377C5 /* AESCrypt */,
 				1D387A61201578A1005E747C /* HTCustomizedAESencrypt.h */,
 			);
@@ -125,6 +113,8 @@
 		1D7733082013B3EE005377C5 /* AESCrypt */ = {
 			isa = PBXGroup;
 			children = (
+				1285492D2015BC2900FD0CA4 /* libHTAESencrypt.h */,
+				1285492E2015BC2A00FD0CA4 /* libHTAESencrypt.m */,
 				1D7733092013B3EE005377C5 /* NSString+Base64.m */,
 				1D77330A2013B3EE005377C5 /* LICENSE */,
 				1D77330B2013B3EE005377C5 /* AESCrypt.m */,
@@ -222,7 +212,7 @@
 				1D7733142013B3EE005377C5 /* NSString+Base64.m in Sources */,
 				1D7733172013B3EE005377C5 /* NSData+Base64.m in Sources */,
 				1D7733152013B3EE005377C5 /* AESCrypt.m in Sources */,
-				1D387A5F20157836005E747C /* libHTAESencrypt.m in Sources */,
+				1285492F2015BC2A00FD0CA4 /* libHTAESencrypt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
