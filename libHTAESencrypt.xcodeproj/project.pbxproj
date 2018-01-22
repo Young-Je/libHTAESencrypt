@@ -6,9 +6,26 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		128548CD2015863700FD0CA4 /* HTUniversalASE */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 128548D02015863800FD0CA4 /* Build configuration list for PBXAggregateTarget "HTUniversalASE" */;
+			buildPhases = (
+				128548D12015863E00FD0CA4 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = HTUniversalASE;
+			productName = HTUniversalASE;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		1D7733012013A564005377C5 /* libHTAESencrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7733002013A564005377C5 /* libHTAESencrypt.m */; };
-		1D7733022013A564005377C5 /* libHTAESencrypt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D7732FF2013A564005377C5 /* libHTAESencrypt.h */; };
+		128548D220158C1000FD0CA4 /* HTCustomizedAESencrypt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D387A61201578A1005E747C /* HTCustomizedAESencrypt.h */; };
+		1285491F2015933200FD0CA4 /* libHTAESencrypt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D387A5E20157836005E747C /* libHTAESencrypt.h */; };
+		12854920201593F400FD0CA4 /* AESCrypt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D7733102013B3EE005377C5 /* AESCrypt.h */; };
+		1285492A2015996900FD0CA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128549292015996900FD0CA4 /* Foundation.framework */; };
+		1D387A5F20157836005E747C /* libHTAESencrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D387A5D20157836005E747C /* libHTAESencrypt.m */; };
 		1D7733142013B3EE005377C5 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7733092013B3EE005377C5 /* NSString+Base64.m */; };
 		1D7733152013B3EE005377C5 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77330B2013B3EE005377C5 /* AESCrypt.m */; };
 		1D7733162013B3EE005377C5 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7733122013B3EE005377C5 /* NSData+CommonCrypto.m */; };
@@ -22,16 +39,20 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				1D7733022013A564005377C5 /* libHTAESencrypt.h in CopyFiles */,
+				12854920201593F400FD0CA4 /* AESCrypt.h in CopyFiles */,
+				1285491F2015933200FD0CA4 /* libHTAESencrypt.h in CopyFiles */,
+				128548D220158C1000FD0CA4 /* HTCustomizedAESencrypt.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		128549292015996900FD0CA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D387A5D20157836005E747C /* libHTAESencrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = libHTAESencrypt.m; sourceTree = "<group>"; };
+		1D387A5E20157836005E747C /* libHTAESencrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libHTAESencrypt.h; sourceTree = "<group>"; };
+		1D387A61201578A1005E747C /* HTCustomizedAESencrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTCustomizedAESencrypt.h; sourceTree = "<group>"; };
 		1D7732FC2013A564005377C5 /* liblibHTAESencrypt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibHTAESencrypt.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D7732FF2013A564005377C5 /* libHTAESencrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libHTAESencrypt.h; sourceTree = "<group>"; };
-		1D7733002013A564005377C5 /* libHTAESencrypt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libHTAESencrypt.m; sourceTree = "<group>"; };
 		1D7733092013B3EE005377C5 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		1D77330A2013B3EE005377C5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1D77330B2013B3EE005377C5 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
@@ -50,17 +71,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1285492A2015996900FD0CA4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		128549282015996900FD0CA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				128549292015996900FD0CA4 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D387A5C20157836005E747C /* HTCustomized */ = {
+			isa = PBXGroup;
+			children = (
+				1D387A5D20157836005E747C /* libHTAESencrypt.m */,
+				1D387A5E20157836005E747C /* libHTAESencrypt.h */,
+			);
+			path = HTCustomized;
+			sourceTree = "<group>";
+		};
 		1D7732F32013A564005377C5 = {
 			isa = PBXGroup;
 			children = (
 				1D7732FE2013A564005377C5 /* libHTAESencrypt */,
 				1D7732FD2013A564005377C5 /* Products */,
+				128549282015996900FD0CA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,9 +115,9 @@
 		1D7732FE2013A564005377C5 /* libHTAESencrypt */ = {
 			isa = PBXGroup;
 			children = (
+				1D387A5C20157836005E747C /* HTCustomized */,
 				1D7733082013B3EE005377C5 /* AESCrypt */,
-				1D7732FF2013A564005377C5 /* libHTAESencrypt.h */,
-				1D7733002013A564005377C5 /* libHTAESencrypt.m */,
+				1D387A61201578A1005E747C /* HTCustomizedAESencrypt.h */,
 			);
 			path = libHTAESencrypt;
 			sourceTree = "<group>";
@@ -129,6 +169,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = yangzhexuxjtu;
 				TargetAttributes = {
+					128548CD2015863700FD0CA4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					1D7732FB2013A564005377C5 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -148,9 +192,26 @@
 			projectRoot = "";
 			targets = (
 				1D7732FB2013A564005377C5 /* libHTAESencrypt */,
+				128548CD2015863700FD0CA4 /* HTUniversalASE */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		128548D12015863E00FD0CA4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target ${PROJECT_NAME} ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target ${PROJECT_NAME} -configuration ${CONFIGURATION} -sdk iphonesimulator -arch x86_64 -arch i386 -arch armv7 -arch armv7s -arch arm64 BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 2. Create universal binary file using lipo\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\"\n\necho \"Universal library can be found here:\"\necho ${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\n\n# Last touch. copy the header files. Just for convenience\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/include\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D7732F82013A564005377C5 /* Sources */ = {
@@ -161,13 +222,31 @@
 				1D7733142013B3EE005377C5 /* NSString+Base64.m in Sources */,
 				1D7733172013B3EE005377C5 /* NSData+Base64.m in Sources */,
 				1D7733152013B3EE005377C5 /* AESCrypt.m in Sources */,
-				1D7733012013A564005377C5 /* libHTAESencrypt.m in Sources */,
+				1D387A5F20157836005E747C /* libHTAESencrypt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		128548CE2015863800FD0CA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 339UKLN78L;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		128548CF2015863800FD0CA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 339UKLN78L;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		1D7733032013A564005377C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -219,6 +298,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_DIR)/$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -267,6 +348,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_DIR)/$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -299,6 +382,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		128548D02015863800FD0CA4 /* Build configuration list for PBXAggregateTarget "HTUniversalASE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128548CE2015863800FD0CA4 /* Debug */,
+				128548CF2015863800FD0CA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1D7732F72013A564005377C5 /* Build configuration list for PBXProject "libHTAESencrypt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

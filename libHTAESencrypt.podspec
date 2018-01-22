@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "libHTAESencrypt"
-  s.version      = "1.0"
-  s.summary      = "A short description of libHTAESencrypt."
+  s.version      = "1.9.7"
+s.summary      = "A customized  AES encryption library, you can use  pod: libHTAESencrypt."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 test lib
                    DESC
 
-  s.homepage     = "http://github.com/libHTAESencrypt"
+  s.homepage     = "https://github.com/Young-Je/libHTAESencrypt"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -64,12 +64,12 @@ s.license      = { :type => "MIT", :file => "HT_LICENSE" }
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
+   s.platform     = :ios
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
+   s.ios.deployment_target = "9.0"
+  # s.osx.deployment_target = "10.8"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
@@ -80,7 +80,7 @@ s.license      = { :type => "MIT", :file => "HT_LICENSE" }
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/Young-Je/libHTAESencrypt.git", :commit => "80b2f58882d291b896969e49f8737c0d1c612dd6" }
+  s.source       = { :git => "https://github.com/Young-Je/libHTAESencrypt.git", :commit => "b6ef73c166a3ba5662d616a7f572c3f759510426" , :submodules => true}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,11 +91,10 @@ s.license      = { :type => "MIT", :file => "HT_LICENSE" }
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "libHTAESencrypt", "libHTAESencrypt/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+ s.source_files  =  "libHTAESencrypt/libHTAESencrypt.h"
+ s.public_header_files = "libHTAESencrypt/libHTAESencrypt.h"
 
-  # s.public_header_files = "Classes/**/*.h"
-
+  #s.exclude_files = "Classes/Exclude"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -134,5 +133,10 @@ s.license      = { :type => "MIT", :file => "HT_LICENSE" }
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+
+  s.subspec 'AESCrypt' do |ms|
+    ms.source_files = "libHTAESencrypt/AESCrypt/**/*.{h,m}"
+    ms.public_header_files =  "libHTAESencrypt/AESCrypt/**/*.h"
+   end
 
 end
