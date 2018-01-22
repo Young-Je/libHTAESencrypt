@@ -9,6 +9,7 @@
 #ifndef HTCustomizedAESencrypt_h
 #define HTCustomizedAESencrypt_h
 
+#import "AESCrypt.h"
 #import "libHTAESencrypt.h"
 
 #endif /* HTCustomizedAESencrypt_h */
