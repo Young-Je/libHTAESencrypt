@@ -17,6 +17,14 @@ static char base64EncodingTable[64] = {
 
 @implementation NSString (Base64Additions)
 
++ (NSString *)encodeBase64String:(NSString *)stringToEncode
+{
+    NSData *dataToEncode = [stringToEncode dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *encodedData = [dataToEncode base64EncodedDataWithOptions:0];
+    NSString *encodedString = [[NSString alloc] initWithData:encodedData encoding:NSUTF8StringEncoding];
+    return encodedString;
+}
+
 + (NSString *)base64StringFromData: (NSData *)data length: (NSUInteger)length {
   unsigned long ixtext, lentext;
   long ctremaining;

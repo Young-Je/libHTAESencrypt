@@ -27,6 +27,9 @@
 // 	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCryptor.h>
+
 #import "AESCrypt.h"
 
 #import "NSData+Base64.h"
@@ -36,15 +39,40 @@
 @implementation AESCrypt
 
 + (NSString *)encrypt:(NSString *)message password:(NSString *)password {
-  NSData *encryptedData = [[message dataUsingEncoding:NSUTF8StringEncoding] AES256EncryptedDataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
-  NSString *base64EncodedString = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
-  return base64EncodedString;
+    NSString *base64test = [NSString encodeBase64String:message];
+//  NSData *encryptedData = [[message dataUsingEncoding:NSUTF8StringEncoding] AES256EncryptedDataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
+      NSData *encryptedData = [[message dataUsingEncoding:NSUTF8StringEncoding] AES256EncryptedDataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
+    NSString* myString;
+    myString = [[NSString alloc] initWithData:encryptedData encoding:NSUTF8StringEncoding];
+//  NSString *base64EncodedString = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
+  return nil;
 }
 
-+ (NSString *)decrypt:(NSString *)base64EncodedString password:(NSString *)password {
-  NSData *encryptedData = [NSData base64DataFromString:base64EncodedString];
-  NSData *decryptedData = [encryptedData decryptedAES256DataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
-  return [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
+//+ (NSString *)decrypt:(NSString *)base64EncodedString password:(NSString *)password {
+////  NSData *encryptedData = [NSData base64DataFromString:base64EncodedString];
+//  NSData *decryptedData = [encryptedData decryptedAES256DataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
+//  return [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
+//}
+
++ (NSData *)dataFromHexString:(NSString *)string
+{
+    string = string.lowercaseString;
+    NSMutableData *data = [[NSMutableData alloc] initWithCapacity:string.length/2];
+    unsigned char whole_byte;
+    char byte_chars[3] = {'\0','\0','\0'};
+    int i = 0;
+    NSUInteger length = string.length;
+    while (i < length-1) {
+        char c = [string characterAtIndex:i++];
+        if (c < '0' || (c > '9' && c < 'a') || c > 'f')
+            continue;
+        byte_chars[0] = c;
+        byte_chars[1] = [string characterAtIndex:i++];
+        whole_byte = strtol(byte_chars, NULL, 16);
+        [data appendBytes:&whole_byte length:1];
+    }
+    return data;
 }
+
 
 @end

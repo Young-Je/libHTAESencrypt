@@ -11,5 +11,7 @@
 
 #import "AESCrypt.h"
 #import "libHTAESencrypt.h"
+#import "FWEncryptorAES.h"
+#import "CryptLib.h"
 
 #endif /* HTCustomizedAESencrypt_h */

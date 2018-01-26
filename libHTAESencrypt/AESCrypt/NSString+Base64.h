@@ -12,5 +12,6 @@
 @interface NSString (Base64Additions)
 
 + (NSString *)base64StringFromData:(NSData *)data length:(NSUInteger)length;
++ (NSString *)encodeBase64String:(NSString *)stringToEncode;
 
 @end

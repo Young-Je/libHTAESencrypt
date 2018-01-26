@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "libHTAESencrypt"
-  s.version      = "1.9.8"
+  s.version      = "1.9.9"
 s.summary      = "A customized  AES encryption library, you can use  pod: libHTAESencrypt."
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ s.license      = { :type => "MIT", :file => "HT_LICENSE" }
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/Young-Je/libHTAESencrypt.git", :commit => "fa5f9bc400ea3d83701be9c3b97cbdb333450292" , :submodules => true}
+  s.source       = { :git => "https://github.com/Young-Je/libHTAESencrypt.git", :commit => "dfd0e978e5e4a762a05be045fb2fa1ff774aabfc" , :submodules => true}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -138,10 +138,5 @@ s.license      = { :type => "MIT", :file => "HT_LICENSE" }
     ms.source_files = "libHTAESencrypt/AESCrypt/**/*.{h,m}"
     ms.public_header_files =  "libHTAESencrypt/AESCrypt/**/*.h"
    end
-
-  s.subspec 'HTCustomized' do |ms|
-  ms.source_files = "libHTAESencrypt/HTCustomized/**/*.{h,m}"
-  ms.public_header_files =  "libHTAESencrypt/HTCustomized/**/*.h"
-  end
 
 end

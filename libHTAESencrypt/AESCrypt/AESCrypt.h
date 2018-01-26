@@ -30,7 +30,8 @@
 #import <Foundation/Foundation.h>
 
 @interface AESCrypt : NSObject
-
++ (NSData *)encryptedDataWithHexKey:(NSString*)hexKey hexIV:(NSString *)hexIV;
++ (NSData *)originalDataWithHexKey:(NSString*)hexKey hexIV:(NSString *)hexIV;
 + (NSString *)encrypt:(NSString *)message password:(NSString *)password;
 + (NSString *)decrypt:(NSString *)base64EncodedString password:(NSString *)password;
 
