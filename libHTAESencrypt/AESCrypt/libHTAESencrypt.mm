@@ -15,8 +15,9 @@
     unsigned char AesBufInfo[256]={0};
     unsigned char k=0;
     const char *key = "HuTongJinMaiKeJij67HKJnu8737<>&#";
-    
-    memcpy(AesBufInfo,"0123456789ABCDEF",16);
+    const char * charMessage = [message UTF8String];
+    unsigned long lengthMessage = [message length];
+    memcpy(AesBufInfo,charMessage,lengthMessage);
     Do_Aes256(AesBufInfo,(unsigned char*)key,AesBufInfo,'e');
     
     char retAesBuf[256]={0};
