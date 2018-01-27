@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "AESCrypt.h"
+
 #import "SrcAes256.h"
 #define ASEENCRYPTIONKEY @"HuTongJinMaiKeJij67HKJnu8737<>&#"
 @interface libHTAESencrypt : NSObject

@@ -1,4 +1,5 @@
 #include "SrcAes256.h"
+#include "Base64.h"
 #pragma clang diagnostic ignored "-Wdeprecated-register"
 #define F(x)  (((x)<<1) ^ ((((x)>>7) & 1) * 0x1b))
 #define FD(x) (((x) >> 1) ^ (((x) & 1) ? 0x8d : 0))
@@ -290,4 +291,59 @@ int Do_Aes256(unsigned char* Src, unsigned char* Key, unsigned char* Dest, unsig
 	memcpy(Dest,Tempbuf,16);
 	aes256_done(&ctx);
 	return 0;
+}
+
+int JX_EncodeQRInfo(char * instr,int instrlen,char * outstr,int *outstrlen)
+{
+    int len;
+    int ret;
+    int i;
+    const char *key = "HuTongJinMaiKeJij67HKJnu8737<>&#";
+    
+    if(instr ==NULL || instrlen <=0)
+    {
+        return 1;
+    }
+    
+    if(instrlen%16 ==0)
+    {
+        len = instrlen;
+    }
+    else
+    {
+        len = ((instrlen/16) +1)*16 ;
+    }
+    unsigned char* dest = (unsigned char*)malloc(len);
+    memset(dest,0,len);
+    memcpy(dest,instr,instrlen);
+    for(i=0;i<len/16;i++)
+    {
+        //AESº”√‹
+        ret = Do_Aes256(dest+i*16,(unsigned char*)key,dest+i*16,'e');
+        if(ret != 0)
+        {
+            free(dest);
+            return 2;
+        }
+    }
+    int strbuflen = 1+((len + 2) / 3) * 4 ;
+    char* strbuf = (char*)malloc(strbuflen);
+    memset(strbuf,0,strbuflen);
+    
+    //◊™Base64◊÷∑˚¥Æ
+    int Base64retLen = BASE64_Encode(dest,len,strbuf);
+    if(Base64retLen <= 0)
+    {
+        free(dest);
+        free(strbuf);
+        return 3;
+    }
+    
+    
+    memcpy(outstr,strbuf,Base64retLen+1);
+    *outstrlen = Base64retLen;
+    free(dest);
+    free(strbuf);
+    
+    return 0;
 }

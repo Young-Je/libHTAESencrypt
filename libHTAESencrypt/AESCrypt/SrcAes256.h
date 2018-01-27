@@ -15,7 +15,9 @@ extern "C" {
   void aes256_done(aes256_context *);
   void aes256_encrypt_ecb(aes256_context *, uint8_t * );
   void aes256_decrypt_ecb(aes256_context *, uint8_t * );
+int JX_EncodeQRInfo(char * instr,int instrlen,char * outstr,int *outstrlen);
   int Do_Aes256(unsigned char* Src, unsigned char* Key, unsigned char* Dest, unsigned char flag);
+
 #ifdef __cplusplus
 }
 #endif
