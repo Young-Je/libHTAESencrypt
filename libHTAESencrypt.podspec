@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "libHTAESencrypt"
-  s.version      = "1.9.9.6"
+  s.version      = "1.9.9.7"
 s.summary      = "A customized  AES encryption library, you can use  pod: libHTAESencrypt."
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ s.summary      = "A customized  AES encryption library, you can use  pod: libHTA
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
- AES encryption wrapped c++ library
+A AES encryption and decryption aglorithm wrapped c++ library.
                    DESC
 
   s.homepage     = "https://github.com/Young-Je/libHTAESencrypt"
@@ -80,7 +80,7 @@ s.license      = { :type => "MIT", :file => "HT_LICENSE" }
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/Young-Je/libHTAESencrypt.git", :commit => "2ef18ce88a0b3f8ba658aa12094ff4a2313e490b" , :submodules => true}
+  s.source       = { :git => "https://github.com/Young-Je/libHTAESencrypt.git", :commit => "f1155bf55c1aa3f7228b0d217442a7c14d5061b8" , :submodules => true}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
