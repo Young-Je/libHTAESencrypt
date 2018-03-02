@@ -120,7 +120,7 @@ s.license      = { :type => "MIT", :file => "HT_LICENSE" }
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
+   s.libraries = "c++", "xml2"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
