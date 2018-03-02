@@ -347,3 +347,42 @@ int JX_EncodeQRInfo(char * instr,int instrlen,char * outstr,int *outstrlen)
     
     return 0;
 }
+
+int DecryptQRInfo(const char *encryptedStr, char *decryptedStr){
+    if (encryptedStr == NULL || strlen(encryptedStr) <= 1) {
+        return 1;
+    }
+    int len = 0, i = 0, ret = 0;
+    const char *key = "HuTongJinMaiKeJij67HKJnu8737<>&#";
+    int baseLen = (int)(strlen(encryptedStr) / 4) * 3 - 2;
+    int originLen = 0;
+    unsigned char* strbuf1 = (unsigned char*)malloc(baseLen);
+    memset(strbuf1, 0, baseLen);
+    if (strlen(encryptedStr)%4 == 0)
+    {
+        originLen = (int)strlen(encryptedStr);
+    }else{
+        originLen = (int)strlen(encryptedStr) - 1;
+    }
+    int debasetest1 = BASE64_Decode(encryptedStr, originLen, strbuf1);
+    
+    if (debasetest1 < 0)
+    {
+        return 1;
+    }
+    
+    len = debasetest1;
+    for (i = 0; i<len / 16; i++)
+    {
+        ret = Do_Aes256(strbuf1 + i * 16, (unsigned char*)key, strbuf1 + i * 16, 'd');
+        if (ret != 0)
+        {
+            free(strbuf1);
+            return 1;
+        }
+        
+    }
+    memcpy(decryptedStr, strbuf1, len);
+    free(strbuf1);
+    return 0;
+}
